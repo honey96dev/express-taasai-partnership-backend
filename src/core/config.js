@@ -40,6 +40,8 @@ const session = {
 const dbTblName = {
   users: "fleets",
   causes: "causes",
+  passengers: "passengers",
+  rides: "rides",
   footers: "footers",
 
   resetPasswordTokens: "reset_password_tokens",
