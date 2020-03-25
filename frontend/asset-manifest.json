@@ -6,7 +6,8 @@
     "static/css/2.chunk.css": "/static/css/2.chunk.css",
     "static/js/2.chunk.js": "/static/js/2.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.js?1587054c94ee8d1e8faefbf218d9a218": "/precache-manifest.js?1587054c94ee8d1e8faefbf218d9a218",
-    "service-worker.js": "/service-worker.js"
+    "precache-manifest.js?7cd5efab556f22bdcc85003088943444": "/precache-manifest.js?7cd5efab556f22bdcc85003088943444",
+    "service-worker.js": "/service-worker.js",
+    "static/media/all.min.css": "/static/media/fa-solid-900.woff2"
   }
 }
