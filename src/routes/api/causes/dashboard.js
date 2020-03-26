@@ -67,9 +67,29 @@ const donateListProc = async (req, res, next) => {
   }
 }
 
+const withdrawListProc = async (req, res, next) => {  
+  const lang = req.get(consts.lang) || consts.defaultLanguage;
+  const langs = strings[lang];
+  let {id} = req.body;
+  
+  try {
+    let sql = sprintf("SELECT R.*, P.name contributor FROM %s R INNER JOIN %s P ON P.id = R.passenger_id AND R.cause_id = $1 AND R.ride_status = $2;", dbTblName.rides, dbTblName.passengers);
+
+    let {rows, rowCount} = await db.query(sql, [id, 4]);
+
+    res.status(200).send({
+      result: langs.success,
+      data: rows,
+    });
+  } catch (err) {
+    helpers.handleErrorResponse(res, err, langs);
+  }
+}
+
 const router = express.Router();
 
 router.post("/overall", overallProc);
 router.post("/donate-list", donateListProc);
+router.post("/withdraw-list", withdrawListProc);
 
 export default router;
