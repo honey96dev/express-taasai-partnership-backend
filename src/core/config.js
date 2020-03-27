@@ -40,6 +40,8 @@ const session = {
 const dbTblName = {
   users: "fleets",
   causes: "causes",
+  merchants: "merchants",
+  offers: "offers",
   passengers: "passengers",
   rides: "rides",
   footers: "footers",

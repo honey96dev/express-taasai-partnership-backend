@@ -2,10 +2,9 @@ import express from "express";
 import expressJwt from "express-jwt";
 import {session} from "core/config";
 
-import authRouter from "./api/auth";
-import causesRouter from "./api/causes";
-import merchantsRouter from "./api/merchants";
-import footersRouter from "./api/footers";
+import authRouter from "./merchants/auth";
+import dashboardRouter from "./merchants/dashboard";
+import informationRouter from "./merchants/information";
 
 const router = express.Router();
 
@@ -17,8 +16,7 @@ const router = express.Router();
 //   }));
 
 router.use("/auth", authRouter);
-router.use("/causes", causesRouter);
-router.use("/merchants", merchantsRouter);
-router.use("/footers", footersRouter);
+router.use("/dashboard", dashboardRouter);
+router.use("/information", informationRouter);
 
 export default router;
